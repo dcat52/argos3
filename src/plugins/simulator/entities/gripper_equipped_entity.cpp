@@ -8,11 +8,6 @@
 #include <argos3/core/simulator/space/space.h>
 
 namespace argos {
-   
-   /****************************************/
-   /****************************************/
-
-   CRange<Real> UNIT(0.0f, 1.0f);
 
    /****************************************/
    /****************************************/
@@ -23,6 +18,7 @@ namespace argos {
       m_fLockThreshold(0.5f),
       m_pcGrippedEntity(nullptr) {
       Disable();
+      m_cUnit = CRange<Real>(0.0f, 1.0f);
    }
          
    /****************************************/
@@ -78,7 +74,7 @@ namespace argos {
    /****************************************/
          
    void CGripperEquippedEntity::SetLockState(Real f_lock_state) {
-      UNIT.TruncValue(f_lock_state);
+      m_cUnit.TruncValue(f_lock_state);
       m_fLockState = f_lock_state;
    }
 
@@ -86,7 +82,7 @@ namespace argos {
    /****************************************/
          
    void CGripperEquippedEntity::SetLockThreshold(Real f_lock_threshold) {
-      UNIT.TruncValue(f_lock_threshold);
+      m_cUnit.TruncValue(f_lock_threshold);
       m_fLockThreshold = f_lock_threshold;
    }
 

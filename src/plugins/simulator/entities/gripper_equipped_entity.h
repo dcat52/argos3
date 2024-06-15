@@ -223,6 +223,8 @@ namespace argos {
       }
 
    private:
+      /** TODO */
+      CRange<Real> m_cUnit;
 
       /** The positional offset of this gripper with respect to the robot reference point */
       CVector3 m_cOffset;
